@@ -1,0 +1,31 @@
+body {
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+.menu-header {
+    background: linear-gradient(rgba(33, 37, 41, 0.9), rgba(33, 37, 41, 0.9)), url('../img/hero-bg.jpg') center/cover no-repeat;
+}
+
+.menu-info {
+    border-radius: 10px;
+}

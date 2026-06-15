@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Product</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/detail.css">
+</head>
+<body>
+   <script src="./include/header.js"></script>
+
+    <main class="bg-light">
+    <div class="container py-5">
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="products.html" class="text-decoration-none text-dark">Products</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Classic Tomato Basil</li>
+            </ol>
+        </nav>
+
+        <div class="row gx-5">
+            <div class="col-md-6 mb-4">
+                <img src="img/tomato-basil.jpg" class="img-fluid rounded shadow image-detail" alt="Tomato Basil Soup">
+            </div>
+            <div class="col-md-6">
+                <span class="badge bg-warning text-dark mb-3">Fresh Daily</span>
+                <h1 class="fw-bold">Classic Tomato Basil</h1>
+                <h3 class="text-danger mb-4">$6.99</h3>
+                <p class="lead">Our signature slow-roasted tomato soup, blended with fresh organic basil, garlic, and a touch of cream. Perfect for a chilly day.</p>
+                
+                <div class="row g-3 my-4">
+                    <div class="col-6">
+                        <div class="detail-info bg-white p-3 shadow-sm">
+                            <i class="bi bi-clock text-warning"></i>
+                            <span class="fw-bold ms-2">Ready in 10 min</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="detail-info bg-white p-3 shadow-sm">
+                            <i class="bi bi-bag-check text-warning"></i>
+                            <span class="fw-bold ms-2">Dine in or takeaway</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h5 class="mt-4"><i class="bi bi-list-check"></i> Ingredients</h5>
+                <ul class="list-group list-group-flush mb-4 ingredient-list">
+                    <li class="list-group-item bg-transparent">Fresh vegetables</li>
+                    <li class="list-group-item bg-transparent">House-made broth</li>
+                    <li class="list-group-item bg-transparent">Herbs and seasoning</li>
+                    <li class="list-group-item bg-transparent">Optional toppings available</li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-3">
+                    <input type="number" class="form-control w-25" value="1" min="1">
+                    <button class="btn btn-warning btn-lg px-4"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="container pb-5">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="detail-card bg-white p-4 h-100 shadow-sm">
+                    <i class="bi bi-shield-check text-warning fs-2"></i>
+                    <h5 class="fw-bold mt-3">Quality Checked</h5>
+                    <p class="text-muted mb-0">Each batch is tasted before serving for flavor and consistency.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="detail-card bg-white p-4 h-100 shadow-sm">
+                    <i class="bi bi-thermometer-sun text-warning fs-2"></i>
+                    <h5 class="fw-bold mt-3">Served Hot</h5>
+                    <p class="text-muted mb-0">Packed carefully so your soup stays warm from counter to table.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="detail-card bg-white p-4 h-100 shadow-sm">
+                    <i class="bi bi-arrow-repeat text-warning fs-2"></i>
+                    <h5 class="fw-bold mt-3">Easy Reorder</h5>
+                    <p class="text-muted mb-0">Return to the menu anytime and choose another signature bowl.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <script src="./include/footer.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+     
+        const params = new URLSearchParams(window.location.search);
+
+        const title = params.get('title') || 'Classic Tomato Basil';
+        const price = params.get('price') || '6.99';
+        const img = params.get('img') || 'img/tomato-basil.jpg';
+        const description = params.get('description') || 'Rich roasted tomatoes with fresh basil.';
+
+        document.title = `Tiki Soup | ${title}`;
+        
+        const breadcrumbItem = document.querySelector('.breadcrumb-item.active');
+        breadcrumbItem.textContent = title;
+
+        const imageElement = document.querySelector('.image-detail');
+        imageElement.src = img;
+        imageElement.alt = title;
+
+        const h1 = document.querySelector('h1');
+        h1.textContent = title;
+         
+        const h3 = document.querySelector('h3');
+        h3.textContent = `$${parseFloat(price).toFixed(2)}`;
+
+        const lead = document.querySelector('p.lead');
+        lead.textContent = description;
+
+        
+    </script>
+</body>
+</html>

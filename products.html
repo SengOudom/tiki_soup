@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/products.css">
+</head>
+
+<body>
+    <script src="./include/header.js"></script>
+
+    <section class="menu-header bg-dark text-white text-center py-5">
+        <div class="container">
+            <h1 class="fw-bold">Our Soup Menu</h1>
+            <p class="lead text-white-50 mb-0">Classic comfort bowls, creamy favorites, and bright coconut broths.</p>
+        </div>
+    </section>
+
+    <main class="bg-light">
+    <div class="container py-5">
+        <div class="row g-3 mb-5 text-center">
+            <div class="col-md-4">
+                <div class="menu-info bg-white p-3 shadow-sm">
+                    <i class="bi bi-clock-fill text-warning"></i>
+                    <span class="fw-bold ms-2">Fresh Daily</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="menu-info bg-white p-3 shadow-sm">
+                    <i class="bi bi-bag-check-fill text-warning"></i>
+                    <span class="fw-bold ms-2">Takeaway Ready</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="menu-info bg-white p-3 shadow-sm">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <span class="fw-bold ms-2">11 Signature Bowls</span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="text-center mb-5 fw-bold border-bottom pb-3">Our Signature Soups</h2>
+        <div class="row g-4">
+            <script>
+                const data = [
+                    {
+                        title: "Classic Tomato Basil",
+                        muted: "Rich roasted tomatoes with fresh basil.",
+                        price: 6.99,
+                        img: "img/tomato-basil.jpg",
+                    },
+                    {
+                        title: "Chicken Noodle",
+                        muted: "Tender chicken, egg noodles, and fresh vegetables in a golden broth.",
+                        price: 7.49,
+                        img: "img/chicken-noodle.jpg",
+                    },
+                    {
+                        title: "French Onion",
+                        muted: "Slow-caramelized onions in a rich beef broth, topped with gruyere.",
+                        price: 8.99,
+                        img: "img/french-onion.jpg",
+                    },
+                    {
+                        title: "Mushroom Cream",
+                        muted: "Wild mushrooms blended with cream, thyme, and a hint of truffle.",
+                        price: 8.49,
+                        img: "img/mushroom-cream.jpg",
+                    },
+                    {
+                        title: "Minestrone",
+                        muted: "Hearty Italian vegetable soup with cannellini beans and pasta.",
+                        price: 6.49,
+                        img: "img/minestrone.jpg",
+                    },
+                    {
+                        title: "New England Clam Chowder",
+                        muted: "Creamy chowder loaded with clams, potatoes, and smoky bacon.",
+                        price: 9.49,
+                        img: "img/clam-chowder.jpg",
+                    },
+                    {
+                        title: "Butternut Squash",
+                        muted: "Roasted butternut squash blended with ginger, nutmeg, and coconut milk.",
+                        price: 7.99,
+                        img: "img/butternut-squash.jpg",
+                    },
+                    {
+                        title: "Red Lentil",
+                        muted: "Spiced red lentils simmered with cumin, turmeric, and lemon.",
+                        price: 6.99,
+                        img: "img/lentil.jpg",
+                    },
+                    {
+                        title: "Broccoli Cheddar",
+                        muted: "Velvety cheddar soup packed with tender broccoli florets.",
+                        price: 7.99,
+                        img: "img/broccoli-cheddar.jpg",
+                    },
+                    {
+                        title: "Miso Ramen",
+                        muted: "Japanese miso broth with ramen noodles, tofu, and nori.",
+                        price: 9.99,
+                        img: "img/miso.jpg",
+                    },
+                    {
+                        title: "Khmer Coconut",
+                        muted: "Lemongrass-infused coconut broth with shrimp, galangal, and chili.",
+                        price: 9.49,
+                        img: "img/thai-coconut.jpg",
+                    },
+                ];
+
+                data.map(item => {
+                    const params = new URLSearchParams({
+                        title: item.title,
+                        description: item.muted,
+                        price: item.price,
+                        img: item.img
+                    });
+                    
+                    document.write(`
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card h-100 shadow-sm product-card">
+                                <img src="${item.img}" class="card-img-top" alt="${item.title}">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">${item.title}</h5>
+                                    <p class="card-text text-muted">${item.muted.slice(0,35) + (item.muted.length > 35 ? '.....' : '')}</p>
+                                    <h6 class="fw-bold mb-3 text-danger">$${item.price.toFixed(2)}</h6>
+                                    <a href="product-detail.html?${params}" class="btn btn-outline-dark"><i class="bi bi-eye"></i> View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    `)
+                })
+            </script>
+
+        </div>
+    </div>
+    </main>
+
+    <script src="./include/footer.js"></script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.image-detail {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline !important;
+    color: #ffc107 !important;
+}
+
+.list-group-item {
+    border-color: #dee2e6;
+    padding-left: 0;
+}
+
+.detail-info,
+.detail-card {
+    border-radius: 10px;
+}
+
+.detail-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.ingredient-list .list-group-item {
+    padding-left: 0;
+}
