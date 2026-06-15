@@ -10,18 +10,7 @@
     align-items: center;
     
 }
-.contact-info {
-    position: relative;
-    overflow: hidden;
-}
-.contact-info::after {
-    content: '';
-    position: absolute;
-    bottom: -50px;
-    width: 250px;
-    height: 150px;
-    border-radius: 50%;
-}
+
 .maps {
     width: 100%;
     display: flex;
