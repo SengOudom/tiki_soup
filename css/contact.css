@@ -1,46 +1,31 @@
-body {
-    background-color: #f8f9fa;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+.info {
+    margin: 30px;
+    border: 0;
+    padding: 0;
 }
-
+.benner_img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    align-items: center;
+    
+}
 .contact-info {
     position: relative;
     overflow: hidden;
 }
-
 .contact-info::after {
     content: '';
     position: absolute;
     bottom: -50px;
-    right: -50px;
-    width: 150px;
+    width: 250px;
     height: 150px;
-    background: rgba(255, 193, 7, 0.1);
     border-radius: 50%;
 }
-
-.contact-form .form-control:focus {
-    border-color: #ffc107;
-    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
-}
-
-.contact-header {
-    background: linear-gradient(rgba(33, 37, 41, 0.9), rgba(33, 37, 41, 0.9)), url('../img/hero-bg.jpg') center/cover no-repeat;
-}
-
-.contact-card,
-.contact-form,
-.contact-info {
-    border-radius: 10px !important;
-}
-
-.contact-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+.maps {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
 }
